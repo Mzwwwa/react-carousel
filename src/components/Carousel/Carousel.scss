@@ -1,0 +1,79 @@
+.app__carousel {
+    max-width: 1500px;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media(max-width: 1600px) {
+        max-width: 90vw;
+    }
+
+    .swiper-slide {
+        transition: 0.3s ease-in;
+
+        &-active {
+            transform: scale(1.5);
+            z-index: 2;
+
+            @media(max-width: 768px) {
+                transform: scale(1);
+            }
+        }
+
+    }
+
+    div[class^="swiper-button"] {
+        width: 42px;
+        height: 42px;
+        background: var(--color-dark);
+        color: var(--color-light);
+        border-radius: 50%;
+        top: 90%;
+
+        
+
+        &::after {
+            font-size: 1rem;
+        }
+
+        &:hover {
+            background: var(--color-yellow);
+            color: var(--color-dark);
+        }
+    }
+
+    .swiper-button-prev {
+        left: 28%;
+
+        @media(max-width: 1600px) {
+            left:14%;
+        }
+    }
+    .swiper-button-next {
+        right: 28%;
+
+        @media(max-width: 1600px) {
+            right: 14%;
+        }
+    }
+
+    .swiper-container {
+        width: 480px;
+      }
+      
+      @media screen and (min-width: 640px) {
+        .swiper-container {
+          width: 640px;
+        }
+      }
+      
+      @media screen and (min-width: 1024px) {
+        .swiper-container {
+          width: 1024px;
+        }
+    }
+}
+
+  

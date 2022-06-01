@@ -1,0 +1,77 @@
+@font-face {
+  font-family: 'Elaine Sans Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Elaine Sans Regular'), url('./fonts/ElaineSans-Regular.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'Elaine Sans Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Elaine Sans Light'), url('./fonts/ElaineSans-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Elaine Sans Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Elaine Sans Medium'), url('./fonts/ElaineSans-Medium.woff') format('woff');
+}
+  
+
+@font-face {
+  font-family: 'Elaine Sans SemiBold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Elaine Sans SemiBold'), url('./fonts/ElaineSans-SemiBold.woff') format('woff');
+}
+  
+
+ @font-face {
+  font-family: 'Elaine Sans Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Elaine Sans Bold'), url('./fonts/ElaineSans-Bold.woff') format('woff');
+}
+
+
+:root {
+  /* Fonts */
+  --font-regular: 'Elaine Sans Regular';
+  --font-light: 'Elaine Sans Light';
+  --font-medium: 'Elaine Sans Medium';
+  --font-semibold: 'Elaine Sans SemiBold';
+  --font-bold: 'Elaine Sans Bold';
+
+  /* Colours */
+  --color-light: #ffffff;
+  --color-dark: #1A1A1A;
+  --color-dark-shade: #333333;
+  --color-pink: #F6CCCD;
+  --color-yellow: #FFBC04;
+  --color-grey: #E8E8E8;
+  --color-light-grey: #FCFCFC;
+  --color-grey-medium: #ebebeb;
+}
+
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  font-family: var(--font-regular);
+  font-size: 1rem;
+  color: var(--color-dark);
+  margin: 0;
+  padding: 0;
+  background: var(--color-pink);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
