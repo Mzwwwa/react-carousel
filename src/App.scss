@@ -1,0 +1,33 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__inner-title {
+    font-size: 2rem;
+    font-family: var(--font-light);
+    margin-left: calc( 20% + 40px);
+    transform: translateY(100%);
+    line-height: 0;
+    height: 0;
+
+    .text-in {
+      opacity: 0;
+      line-height: 1.5;
+      transform: translateY(120%);
+
+      &:last-child { transform: translateY(160%); }
+    }
+
+    @media(max-width: 1500px) {
+      font-size: 1.5rem;
+      margin-left: 20px;
+      transform: translateY(0%);      
+    }
+    @media(max-width: 768px) {text-align: center; }    
+
+    strong { font-family: var(--font-semibold); }
+  }  
+}

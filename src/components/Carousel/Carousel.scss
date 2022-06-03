@@ -1,28 +1,21 @@
 .app__carousel {
     max-width: 1500px;
     height: 100%;
-
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    transform: translateY(80px);
 
-    @media(max-width: 1600px) {
-        max-width: 90vw;
+    @media(max-width: 1600px) { max-width: 96vw; }
+    @media(max-width: 1280px) { max-width: 80vw; }
+    @media(max-width: 992px) { max-width: 90vw; }
+    @media(max-width: 768px) { 
+        max-width: 70vw; 
+
+        .swiper-slide { padding: 0 35px;  }
     }
-
-    .swiper-slide {
-        transition: 0.3s ease-in;
-
-        &-active {
-            transform: scale(1.5);
-            z-index: 2;
-
-            @media(max-width: 768px) {
-                transform: scale(1);
-            }
-        }
-
-    }
+    @media(max-width: 600px) { max-width: 100vw; }
 
     div[class^="swiper-button"] {
         width: 42px;
@@ -30,14 +23,9 @@
         background: var(--color-dark);
         color: var(--color-light);
         border-radius: 50%;
-        top: 90%;
+        top: 95%;        
 
-        
-
-        &::after {
-            font-size: 1rem;
-        }
-
+        &::after { font-size: 1rem; }
         &:hover {
             background: var(--color-yellow);
             color: var(--color-dark);
@@ -46,34 +34,17 @@
 
     .swiper-button-prev {
         left: 28%;
-
-        @media(max-width: 1600px) {
-            left:14%;
-        }
+        @media(max-width: 1600px) { left:14%;  }
     }
     .swiper-button-next {
         right: 28%;
-
-        @media(max-width: 1600px) {
-            right: 14%;
-        }
+        @media(max-width: 1600px) { right: 14%; }
     }
 
     .swiper-container {
         width: 480px;
-      }
       
-      @media screen and (min-width: 640px) {
-        .swiper-container {
-          width: 640px;
-        }
-      }
-      
-      @media screen and (min-width: 1024px) {
-        .swiper-container {
-          width: 1024px;
-        }
+      @media screen and (min-width: 320px) { width: 320px; }
+      @media screen and (min-width: 1280px) { width: 1280px;}
     }
 }
-
-  

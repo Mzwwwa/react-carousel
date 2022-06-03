@@ -1,48 +1,77 @@
 .app__carousel-card {
-    min-width: 215px;
-    max-width: 215px;
+    position: relative;
+    min-width: 84%;
+    max-width: 84%;
     min-height: 270px;
     height: 284px;
-    padding: 15%;    
-    margin: 35% auto;
-    text-align: center;
+    margin: 35% auto 45%;
 
-    background: linear-gradient(var(--color-light-grey) 0%, var(--color-grey) 100%);
-    border: 1px solid var(--color-grey-medium);
-    border-radius: 6px;
-    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.12);
-    transition: .45s ease-in-out;
+    @media(max-width: 767px) { margin: 50% auto 50%; }
 
-    @media(max-width: 1600px) {
-        min-width: 90%;
-        max-width: 90%;
+    @mixin card-sizing {
+        width: 100%;     
         height: 100%;
+        border-radius: 6px;
+
+        @media(max-width: 768px) { width: 84%;  }
     }
 
-    @media(max-width: 768px) {
-        min-width: 80%;
-        max-width: 80%;
-        height: 100%;
-        margin-top: 25%;
+    &-container  {     
+        @include card-sizing;
+
+        margin-left: auto;
+        margin-right: auto;
+        padding: 15%;   
+        text-align: center;          
+        background: linear-gradient(var(--color-light-grey) 0%, var(--color-grey) 100%); 
+
+        @media(max-width: 1600px) { height: 100%; }
+        @media(max-width: 768px) { 
+            margin-top: 25%; 
+            padding: 7.5%;   
+        }
+
+        &:hover {
+            background: linear-gradient(var(--color-dark-shade) 0%, var(--color-dark) 100%); 
+
+            .app__carousel-card-title, 
+            .app__carousel-card-action { 
+                color: var(--color-light); 
+            }
+        }       
     }
 
-    .swiper-slide-active & {
-        background: linear-gradient(var(--color-dark-shade) 0%, var(--color-dark) 100%);
-        border: 1px solid transparent;
-        box-shadow: 0px 3px 0px var(--color-yellow), 0px 6px 18px rgba(0, 0, 0, 0.12);
+    &-line  {
+        @include card-sizing;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: var(--color-yellow);
+        box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.12);
+        transform: scale(0.8) translateY(0);
+        transition: 0.65s ease-in-out;
+        z-index: -1;
+
+        @media(max-width: 768px) {left: 8%; }
+
+        .swiper-slide-active &, 
+        .swiper-slide-duplicate.swiper-slide-active & {
+            box-shadow: 0px 6px 32px rgba(0, 0, 0, 0.2);
+            transform: scale(0.995) translateY(10px);
+            transition: 0.45s ease-in-out;
+        }
     }
-    
 
     &-inner {
+        position: relative;
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
 
-        i, svg {
-            font-size: 5rem;
-        }
+        i, svg { font-size: 5rem; }
     }   
 
     &-title {
@@ -50,40 +79,23 @@
         font-size: 1.25rem;
         line-height: 1.4;
         max-width: 110px;
-        transition: .3s ease-in;
-
-        .swiper-slide-active & {
-            color: var(--color-light);
-        }
+        transition: color .2s ease-in;
+        
     }
 
     &-action {
         font-family: var(--font-bold);
         font-size: 1rem;
         line-height: 1;
+        min-height: 30px;
         text-transform: uppercase;
         color: var(--color-dark);
         opacity: 0;
-
         display: inline-flex;
-        align-items: center;
-        
-        transform: translateY(100%) scale(0.65);   
-        transition: opacity .3s ease-in-out, transform .6s ease-in-out; 
+        align-items: center;        
+        transform: translateY(-85%) scale(0.65);   
 
-        @media(max-width: 768px) {
-            font-size: 1.5rem;
-        }
 
-        .swiper-slide-active & {
-            opacity: 1;
-            transform: translateY(0) scale(0.65);
-            color: var(--color-light);
-             
-        }
-        
-        svg {
-            margin-left: 3px;
-        }
+        svg { margin-left: 3px; }
     }
 }

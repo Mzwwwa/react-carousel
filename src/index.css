@@ -5,7 +5,6 @@
   src: local('Elaine Sans Regular'), url('./fonts/ElaineSans-Regular.woff') format('woff');
 }
 
-
 @font-face {
   font-family: 'Elaine Sans Light';
   font-style: normal;
@@ -18,24 +17,21 @@
   font-style: normal;
   font-weight: normal;
   src: local('Elaine Sans Medium'), url('./fonts/ElaineSans-Medium.woff') format('woff');
-}
-  
+}  
 
 @font-face {
   font-family: 'Elaine Sans SemiBold';
   font-style: normal;
   font-weight: normal;
   src: local('Elaine Sans SemiBold'), url('./fonts/ElaineSans-SemiBold.woff') format('woff');
-}
-  
+}  
 
- @font-face {
+@font-face {
   font-family: 'Elaine Sans Bold';
   font-style: normal;
   font-weight: normal;
   src: local('Elaine Sans Bold'), url('./fonts/ElaineSans-Bold.woff') format('woff');
 }
-
 
 :root {
   /* Fonts */
@@ -55,7 +51,6 @@
   --color-light-grey: #FCFCFC;
   --color-grey-medium: #ebebeb;
 }
-
 
 * {
   box-sizing: border-box;
